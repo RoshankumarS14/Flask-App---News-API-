@@ -1,7 +1,10 @@
 from flask import Flask, request
 import requests
+import os
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 API_KEY = os.getenv("NEWSAPI_KEY")
 
 @app.route('/news', methods=['GET'])
